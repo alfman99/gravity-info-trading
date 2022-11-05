@@ -11,7 +11,7 @@ export class NewsArticleRepository {
     const val = await this.knex('news')
       .insert({
         url: news.url,
-        content: news.content,
+        content: news.content.trim(), // Trim new lines and spaces
         asset: news.asset,
         published_at: news.published_at,
         sentiment: news.sentiment,
