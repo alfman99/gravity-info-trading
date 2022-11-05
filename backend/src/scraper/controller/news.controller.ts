@@ -38,7 +38,7 @@ export class NewsController {
 
       await this.newsRepository.update(newVal);
 
-      await this.gateway.sendNewsArticleToAllClients(newsArt);
+      await this.gateway.sendNewsArticleToAllClients(newVal);
     }
 
     return `Done, ${listNews.length} news processed`;
