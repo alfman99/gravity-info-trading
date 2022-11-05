@@ -18,12 +18,15 @@ export const Websocket = () =>{
     const [messages,setMessages] = useState([]);
     useEffect(()=>{
         socket.on('connect',()=>{
-            console.log('Connected!')
+          console.log('Connected!')
         })
+        socket.on('initListArticles',(data) => {
+          setMessages(data);
+        });
         socket.on('newNewsArticle',(data) => {
-            console.log('onMessage event received');
-            console.log(data);
-            setMessages((prev) => [...prev, data]);
+          console.log('onMessage event received');
+          console.log(data);
+          setMessages((prev) => [...prev, data]);
         });
         return () => {            
             socket.off('connect')

@@ -2,7 +2,6 @@ import TradeViewChart from 'react-crypto-chart';
 import './style.css';
 import React from 'react';
 import Image from "./imgs/logo.png";
-import Card from './components/card';
 import { socket, WebsocketProvider } from './contexts/WebSocketContext';
 import { Websocket } from './components/Websocket';
 
