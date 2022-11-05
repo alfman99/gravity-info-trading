@@ -10,7 +10,7 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     ScraperModule,
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'client'),
+      rootPath: join(__dirname, '..', 'build'),
     }),
   ],
   controllers: [],
