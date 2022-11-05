@@ -37,3 +37,12 @@ div.news{
 div.chartContainer {
   width: 100%;
 }
+.chartHeader {
+  text-align: center;
+  background-color: grey;
+  width: 100%;
+  height: 70px;
+  padding-top: 15px;
+  color: goldenrod;
+  font-weight: bold;
+}
