@@ -1,5 +1,14 @@
 import { Box, Center, Flex,  useColorModeValue} from '@chakra-ui/react';
 
+// interface NewsArticle {
+//     url: string;
+//     content: string;
+//     asset: string;
+//     published_at: Date;
+//     sentiment ?: number;
+//     id?: number;
+// }
+
 const Card = (props) =>{
     const object = props.object;
     return (           
@@ -13,8 +22,11 @@ const Card = (props) =>{
                     boxShadow={'2xl'}
                     rounded={'md'}
                     overflow={'hidden'}
-                    >                
-                    <p>{object.title}</p>
+                    >    
+                    <a style="text-decoration:none"href={object.url}>
+                        <p>{object.content}</p>
+                        </a>            
+                    
                 {/* <Flex justify={'center'} mt={-12} color="blue">
                     
                 </Flex> */}

@@ -35,6 +35,8 @@ div.news{
   text-align: left;
 }
 div.chartContainer {
+  display:flex;
+  flex-direction: column;
   width: 100%;
 }
 .chartHeader {
