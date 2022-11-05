@@ -9,27 +9,25 @@ import { Box, Center, Flex,  useColorModeValue} from '@chakra-ui/react';
 //     id?: number;
 // }
 
-const Card = (props) =>{
-    const object = props.object;
+const Card = ({ newsArticle }) =>{
     return (           
         <div>           
             <Center py={1}>           
                 <Box
-                    maxW={'190px'}
-                    minH={'80px'}
+                    maxH={'10em'}
                     w={'full'}
                     bg={useColorModeValue('white', 'gray.800')}
                     boxShadow={'2xl'}
                     rounded={'md'}
                     overflow={'hidden'}
+                    margin={2}
+                    padding={2}
                     >    
-                    <a style="text-decoration:none"href={object.url}>
-                        <p>{object.content}</p>
-                        </a>            
-                    
-                {/* <Flex justify={'center'} mt={-12} color="blue">
-                    
-                </Flex> */}
+                    <a href={newsArticle.url}>
+                      <p style={{
+                        textOverflow: 'ellipsis',
+                      }}>{newsArticle.content}</p>
+                    </a>
                 </Box>
             </Center>
         </div>

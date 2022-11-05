@@ -37,7 +37,7 @@ export const Websocket = () =>{
     return (
         <>            
             {messages && messages.map((e)=> {
-                return <Card object={e}></Card>
+                return <Card key={e.id} newsArticle={e}></Card>
             })}            
         </>
     );
