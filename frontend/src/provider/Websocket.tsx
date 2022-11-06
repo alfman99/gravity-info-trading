@@ -60,7 +60,7 @@ export const Websocket = () => {
           <Badge variant="light" color="gray">Neutral: {countNeutralArticles(messages)}</Badge>  
           <Badge variant="light" color="red">Negative: {countNegativeArticles(messages)}</Badge>  
         </Group>  
-        <div style={{ overflow: 'auto', paddingRight: '0.5em' }}>   
+        <div style={{ overflow: 'auto', paddingRight: '0.5em', height: '95%' }}>   
             {messages && messages.map((newsArticle)=> {
                 return <NewsCard key={newsArticle.id} news={newsArticle} />
             })}            
