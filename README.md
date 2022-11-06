@@ -5,8 +5,9 @@
 - Commit history of frontend: https://github.com/cintxgc/frontend
 
 # Architecture of the service
-![WhatsApp Image 2022-11-06 at 00 19 42](https://user-images.githubusercontent.com/61798173/200148970-2fb143aa-88b7-4cf3-bc79-7a6cd7eca74c.jpeg)
+
 *Picture summing up the created architecture while developing the project.*
+![WhatsApp Image 2022-11-06 at 03 19 03](https://user-images.githubusercontent.com/61798173/200159734-55d1d61a-276a-493d-a9fe-d401d2acd3c2.jpeg)
 
 # Project Description
 The challenge that we are focused on is "Crypto Trading Helper" from Gravity Team.
