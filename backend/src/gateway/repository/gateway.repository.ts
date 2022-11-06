@@ -14,7 +14,8 @@ export class GatewayRepository {
         news.content.substring(0, 250),
         news.asset,
         news.published_at,
-        news.sentiment,
+        news.sentiment_positive,
+        news.sentiment_negative,
         news.id,
       ),
     );

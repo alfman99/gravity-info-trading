@@ -14,7 +14,8 @@ export class NewsArticleRepository {
         content: news.content.trim(), // Trim new lines and spaces
         asset: news.asset,
         published_at: news.published_at,
-        sentiment: news.sentiment,
+        sentiment_positive: news.sentiment_positive,
+        sentiment_negative: news.sentiment_negative,
       })
       .returning('*');
     return new NewsArticle(
@@ -22,7 +23,8 @@ export class NewsArticleRepository {
       val[0].content,
       val[0].asset,
       val[0].published_at,
-      val[0].sentiment,
+      val[0].sentiment_positive,
+      val[0].sentiment_negative,
       val[0].id,
     );
   }
@@ -33,12 +35,11 @@ export class NewsArticleRepository {
   }
 
   async update(news: NewsArticle) {
-    await this.knex('news').where({ id: news.id }).update({
-      url: news.url,
-      content: news.content,
-      asset: news.asset,
-      sentiment: news.sentiment,
-    });
+    await this.knex('news')
+      .where({ id: news.id })
+      .update({
+        ...news,
+      });
   }
 
   async getLastNNews(n: number) {

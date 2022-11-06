@@ -6,7 +6,8 @@ exports.up = function (knex) {
       table.increments('id').primary();
       table.string('url').notNullable();
       table.string('content', 50000);
-      table.float('sentiment', 4, 2);
+      table.float('sentiment_positive', 4, 8);
+      table.float('sentiment_negative', 4, 8);
       table.string('asset');
       table.dateTime('published_at').defaultTo(knex.fn.now());
     }),

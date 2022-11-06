@@ -23,16 +23,16 @@ export class NewsController {
     }
 
     for (const newsArt of listNews) {
-      const sentimentValue = await this.sentimentService.getSentimenValueOfNews(
-        newsArt,
-      );
+      const sentimentValue =
+        await this.sentimentService.getSentimentValueOfNews(newsArt);
 
       const newVal = new NewsArticle(
         newsArt.url,
         newsArt.content,
         newsArt.asset,
         newsArt.published_at,
-        sentimentValue,
+        sentimentValue.positive,
+        sentimentValue.negative,
         newsArt.id,
       );
 
