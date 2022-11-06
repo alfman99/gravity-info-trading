@@ -56,7 +56,9 @@ export class NewsArticleRepository {
         row.content,
         row.asset,
         row.published_at,
-        row.sentiment,
+        row.sentiment_positive,
+        row.sentiment_negative,
+        row.id,
       );
     });
   }

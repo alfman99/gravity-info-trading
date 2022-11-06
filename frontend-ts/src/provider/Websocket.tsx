@@ -24,6 +24,7 @@ export const Websocket = () => {
           console.log('Connected!')
         })
         socket.on('initListArticles',(data) => {
+          console.log('initListArticles', data)
           setMessages(data);
         });
         socket.on('newNewsArticle',(data) => {

@@ -14,6 +14,7 @@ interface NewsArticleProps {
 }
 
 const determineSentiment = (article: NewsArticle) => {
+  console.log(article)
   if (Math.abs(article.positive_sentiment - article.negative_sentiment) < 0.2) {
     return Sentiment.Neutral
   }
