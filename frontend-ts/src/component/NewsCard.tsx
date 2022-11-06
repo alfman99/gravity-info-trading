@@ -14,12 +14,12 @@ interface NewsArticleProps {
 }
 
 const determineSentiment = (article: NewsArticle) => {
-  console.log(article)
-  if (Math.abs(article.positive_sentiment - article.negative_sentiment) < 0.2) {
+  console.log('COSA', article.sentiment_positive - article.sentiment_negative)
+  if (Math.abs(article.sentiment_positive - article.sentiment_negative) < 0.5) {
     return Sentiment.Neutral
   }
   else {
-    return article.positive_sentiment > article.negative_sentiment ? Sentiment.Positive : Sentiment.Negative
+    return article.sentiment_positive > article.sentiment_negative ? Sentiment.Positive : Sentiment.Negative
   }
 }
 

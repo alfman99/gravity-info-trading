@@ -11,8 +11,8 @@ export interface NewsArticle {
     content: string;
     asset: string;
     published_at: Date;
-    positive_sentiment: number;
-    negative_sentiment: number;
+    sentiment_positive: number;
+    sentiment_negative: number;
     id?: number;
 }
 
