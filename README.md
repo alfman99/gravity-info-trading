@@ -19,3 +19,6 @@ Taking a deeper look into the AI, we decided that we wanted to use the BERT mode
 Once the data is processed, the previously mentioned NestJs core sends a message, containing the data, through the already established websocket connection with our frontend page. This UI (User Interface)  it's formed with different sections, whom the main part consists of a chart showing the recent time price of the selected crypto. On the left side we can find the latest news including a header with its corresponding sentiment, represented with an emoji. Finally on the top of the page there is a bar where we can see the general sentiment of the news. All this is ment to help us visualize easily the current sentiment of a crypto and to predict comfortably the currency could increase or decrease its value.
 
 This project is designed to be applied both for the present and for the future, as it is fully scalable and some examples of that could be: new sources of information, cryptocurrency filters or adding new types of currency.  Concerning to the new sources, we already developed a way, using different workers and a general configuration file, to add them.
+
+# App visulitzation
+![WhatsApp Image 2022-11-06 at 10 03 08](https://user-images.githubusercontent.com/61798173/200160504-f468b286-bc74-48a1-ba81-4940f6bd0cfc.jpeg)
