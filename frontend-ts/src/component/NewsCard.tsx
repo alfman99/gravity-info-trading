@@ -1,27 +1,14 @@
 import { Badge, Button, Card, Group, Text } from "@mantine/core"
 import ClampLines from "react-clamp-lines"
 import { NewsArticle } from "../provider/Websocket"
-import { getTimeAgo } from "../util/util"
+import { determineSentiment, getDomain, getTimeAgo, Sentiment } from "../util/util"
 
-enum Sentiment {
-  Positive = 'Positive',
-  Negative = 'Negative',
-  Neutral = 'Neutral'
-}
+
 
 interface NewsArticleProps {
   news: NewsArticle
 }
 
-const determineSentiment = (article: NewsArticle) => {
-  console.log('COSA', article.sentiment_positive - article.sentiment_negative)
-  if (Math.abs(article.sentiment_positive - article.sentiment_negative) < 0.5) {
-    return Sentiment.Neutral
-  }
-  else {
-    return article.sentiment_positive > article.sentiment_negative ? Sentiment.Positive : Sentiment.Negative
-  }
-}
 
 const getColorBySentiment = (sentiment: Sentiment) => {
   switch (sentiment) {
@@ -47,10 +34,6 @@ const getEmojiBySentiment = (sentiment: Sentiment) => {
     default:
       return '😐'
   }
-}
-
-const getDomain = (url: string) => {
-  return new URL(url).hostname
 }
 
 const NewsCard = ({ news }: NewsArticleProps) => {

@@ -1,10 +1,11 @@
-import { Group } from "@mantine/core";
+import { Badge, Group } from "@mantine/core";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useContext } from "react";
 import NewsCard from "../component/NewsCard";
 
 import { WebSocketContext } from "../contexts/WebSocketContext";
+import { determineSentiment, Sentiment } from "../util/util";
 
 export interface NewsArticle {
     url: string;
@@ -16,9 +17,23 @@ export interface NewsArticle {
     id?: number;
 }
 
+
+const countPositiveArticles = (articles: NewsArticle[]) => {
+  return articles.filter(article => determineSentiment(article) === Sentiment.Positive).length;
+}
+
+const countNeutralArticles = (articles: NewsArticle[]) => {
+  return articles.filter(article => determineSentiment(article) === Sentiment.Neutral).length;
+}
+
+const countNegativeArticles = (articles: NewsArticle[]) => {
+  return articles.filter(article => determineSentiment(article) === Sentiment.Negative).length;
+}
+
 export const Websocket = () => {
     const socket = useContext(WebSocketContext);
     const [messages,setMessages] = useState<NewsArticle[]>([]);
+    
     useEffect(()=>{
         socket.on('connect',()=>{
           console.log('Connected!')
@@ -41,12 +56,9 @@ export const Websocket = () => {
     return (
       <>
         <Group grow mb='sm'>
-          <div style={{
-            backgroundColor: 'red'
-          }}>5</div>  
-          <div style={{
-            backgroundColor: 'red'
-          }}>6</div>  
+          <Badge variant="light" color="green">Positive: {countPositiveArticles(messages)}</Badge>
+          <Badge variant="light" color="gray">Neutral: {countNeutralArticles(messages)}</Badge>  
+          <Badge variant="light" color="red">Negative: {countNegativeArticles(messages)}</Badge>  
         </Group>  
         <div style={{ overflow: 'auto', paddingRight: '0.5em' }}>   
             {messages && messages.map((newsArticle)=> {
