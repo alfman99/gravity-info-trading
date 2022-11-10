@@ -1,15 +1,11 @@
 # Gravity Info Trading
 
-## We lost the commit history on this repo, commit history of the repos without the merge:
-- Commit history of backend: https://github.com/alfman99/gravity-info-trading
-- Commit history of frontend: https://github.com/cintxgc/frontend
-
-# Architecture of the service
+## Architecture of the service
 
 *Picture summing up the created architecture while developing the project.*
 ![WhatsApp Image 2022-11-06 at 03 19 03](https://user-images.githubusercontent.com/61798173/200159734-55d1d61a-276a-493d-a9fe-d401d2acd3c2.jpeg)
 
-# Project Description
+## Project Description
 The challenge that we are focused on is "Crypto Trading Helper" from Gravity Team.
 For this challenge, it has been decided to implement a service which provides quick access to news and data with its respective "sentiment" which will indicate whether a given piece of information is considered positive, negative or neutral in order to help turn knowledge into action. 
 
@@ -20,5 +16,5 @@ Once the data is processed, the previously mentioned NestJs core sends a message
 
 This project is designed to be applied both for the present and for the future, as it is fully scalable and some examples of that could be: new sources of information, cryptocurrency filters or adding new types of currency.  Concerning to the new sources, we already developed a way, using different workers and a general configuration file, to add them.
 
-# App visulitzation
+## App visulitzation
 ![WhatsApp Image 2022-11-06 at 10 03 08](https://user-images.githubusercontent.com/61798173/200160504-f468b286-bc74-48a1-ba81-4940f6bd0cfc.jpeg)
